@@ -26,6 +26,7 @@ void t_string(va_list va)
 	int j, i;
 	char n[] = "(null)";
 	char *s = va_arg(va, char *);
+
 	j = 0;
 	if (s == NULL)
 	{
@@ -36,6 +37,45 @@ void t_string(va_list va)
 	for (j = 0; s[j] != '\0'; j++)
 		_putchar(s[j]);
 }
+/**
+ * print_number - Entry point
+ *@n: the integer to print
+ * Return: no return
+ */
+void print_number(va_list va)
+{
+
+	char l;
+	int r;
+	char d;
+	int n = va_arg(va, int);
+
+	if (n < 0)
+	{
+		_putchar('-');
+		l = ('0' - (n % 10));
+		n /= -10;
+	} else
+	{
+		l = ((n % 10) + '0');
+		n /= 10;
+	}
+	r = 0;
+	while (n > 0)
+	{
+		r = r * 10 + (n % 10);
+		n /= 10;
+	}
+
+	while (r > 0)
+	{
+		d = ((r % 10) + '0');
+		_putchar (d);
+		r /= 10;
+	}
+	_putchar(l);
+}
+
 /**
  * _printf - print output according to a format
  *@format: first argument
@@ -49,6 +89,8 @@ int _printf(const char *format, ...)
 	types difftypes[] = {
 		{'c', t_char},
 		{'s', t_string},
+		{'d', print_number},
+		{'i', print_number}
 	};
 
 	i = 0;
@@ -61,7 +103,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			j = 0;
-			while (j < 2)
+			while (j < 4)
 			{
 				if (format[i + 1] == difftypes[j].t)
 				{
@@ -74,5 +116,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(valist);
-	return(len);
+	return (len);
 }
