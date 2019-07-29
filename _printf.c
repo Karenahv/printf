@@ -90,13 +90,14 @@ int print_number(va_list va)
  */
 int _printf(const char *format, ...)
 {
-	int i, j, len;
+	int i, j, len, count;
 	va_list valist;
 	types difftypes[] = {{'c', t_char}, {'s', t_string}, {'d', print_number},
-		{'i', print_number}, {'b', binary}};
+			     {'i', print_number}, {'b', binary}};
+
 	i = 0;
 	len = 0;
-	if (!format)
+	if (!format || (format[0] == '%' && format[1] == 0))
 		return (-1);
 	if (format[i] == '%' && format[i + 1] == '\0')
 		return (-1);
@@ -104,30 +105,28 @@ int _printf(const char *format, ...)
 	while (format != NULL && format[i])
 	{
 		if (format[i] != '%')
-		{
-			_putchar(format[i]);
-			len++;
-		}
+			len += _putchar(format[i]);
 		else
 		{
 			i++;
 			if (format[i] == '%')
-			{
-				_putchar(format[i]);
-				len++;
-			}
+				len += _putchar(format[i]);
 			j = 0;
-			while (j < 6)
+			count = 0;
+			while (j < 5)
 			{
 				if (format[i] == difftypes[j].t)
 				{
 					len += difftypes[j].f(valist);
+					count = 1;
 					break; }
-				j++;
-			}
-		}
-		i++;
-	}
+				j++; }
+			if (!count && format[i] != '%')
+			{
+				len++;
+				_putchar('%');
+				_putchar(format[i]); }}
+		i++; }
 	va_end(valist);
 	return (len);
 }
