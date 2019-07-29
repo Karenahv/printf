@@ -97,9 +97,7 @@ int _printf(const char *format, ...)
 
 	i = 0;
 	len = 0;
-	if (!format || (format[0] == '%' && format[1] == 0))
-		return (-1);
-	if (format[i] == '%' && format[i + 1] == '\0')
+	if (format == NULL || (format[0] == '%' && format[1] == 0))
 		return (-1);
 	va_start(valist, format);
 	while (format != NULL && format[i])
@@ -110,10 +108,10 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == '%')
-				len += _putchar(format[i]);
+				len += _putchar('%');
 			j = 0;
 			count = 0;
-			while (j < 5)
+			while (j < 6)
 			{
 				if (format[i] == difftypes[j].t)
 				{
