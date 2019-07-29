@@ -22,7 +22,7 @@ int t_char(va_list va)
  */
 int t_string(va_list va)
 {
-	int i;
+	int i, j, len;
 	char n[] = "(null)";
 	char *s = va_arg(va, char *);
 
@@ -32,9 +32,9 @@ int t_string(va_list va)
 			_putchar(n[i]);
 		return (6);
 	}
-	for (i = 0; s[i] != '\0'; i++)
-		_putchar(s[i]);
-	return (i);
+	for (j = 0; s[j] != '\0'; j++)
+		_putchar(s[j]);
+	return (j);
 }
 /**
  * print_number - Entry point
@@ -118,6 +118,7 @@ int _printf(const char *format, ...)
 				j++; }
 			if (!count && format[i] != '%')
 			{
+				len++;
 				len++;
 				_putchar('%');
 				_putchar(format[i]); }}
