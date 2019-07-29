@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include "holberton.h"
+#define BUFFERSIZE 1024
 
 /**
  * t_char - print a character
@@ -27,10 +28,9 @@ void t_string(va_list va)
 	char n[] = "(null)";
 	char *s = va_arg(va, char *);
 
-	j = 0;
 	if (s == NULL)
 	{
-		for (i = 0; n[i] != '0'; i++)
+		for (i = 0; n[i] != '\0'; i++)
 			_putchar(n[i]);
 		return;
 	}
@@ -90,22 +90,29 @@ int _printf(const char *format, ...)
 		{'c', t_char},
 		{'s', t_string},
 		{'d', print_number},
-		{'i', print_number}
+		{'i', print_number},
+		{'b', binary},
 	};
 
 	i = 0;
+	if (format == NULL)
+		return (-1);
+
 	va_start(valist, format);
 	len = _strlen((char *)format);
 	while (format != NULL && format[i])
 	{
-		if (format[i] != '%' && format[i - 1] != '%')
+		if (format[i] != '%')
 			_putchar(format[i]);
 		else
 		{
+			i++;
+			if(format[i] == '%')
+				_putchar(format[i]);
 			j = 0;
-			while (j < 4)
+			while (j < 6)
 			{
-				if (format[i + 1] == difftypes[j].t)
+				if (format[i] == difftypes[j].t)
 				{
 					difftypes[j].f(valist);
 					break;

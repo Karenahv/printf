@@ -4,6 +4,9 @@
 
 int _putchar(char c);
 int _strlen(char *s);
+void print_number(va_list va);
+void binary(va_list va);
+char *rot13(char *p);
 int _printf(const char *format, ...);
 
 /**
