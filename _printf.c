@@ -46,15 +46,17 @@ int print_number(va_list va)
 {
 
 	char l;
-	int r;
+	int r, len;
 	char d;
 	int n = va_arg(va, int);
 
+	len = 0;
 	if (n < 0)
 	{
 		_putchar('-');
 		l = ('0' - (n % 10));
 		n /= -10;
+		len++;
 	} else
 	{
 		l = ((n % 10) + '0');
@@ -65,6 +67,7 @@ int print_number(va_list va)
 	{
 		r = r * 10 + (n % 10);
 		n /= 10;
+		len++;
 	}
 
 	while (r > 0)
@@ -74,7 +77,7 @@ int print_number(va_list va)
 		r /= 10;
 	}
 	_putchar(l);
-	return (0);
+	return (len + 1);
 }
 
 /**
