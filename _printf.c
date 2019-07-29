@@ -105,14 +105,14 @@ int _printf(const char *format, ...)
 		{
 			i++;
 			if (format[i] == '%')
-				_putchar('%');
+				len += _putchar('%');
 			j = 0;
 			count = 0;
 			while (j < 6)
 			{
 				if (format[i] == difftypes[j].t)
 				{
-					len += (difftypes[j].f(valist));
+					len += difftypes[j].f(valist);
 					count = 1;
 					break; }
 				j++; }
@@ -121,10 +121,8 @@ int _printf(const char *format, ...)
 				len++;
 				len++;
 				_putchar('%');
-				_putchar(format[i]); }
-		}
-		i++;
-	}
+				_putchar(format[i]); }}
+		i++; }
 	va_end(valist);
 	return (len);
 }
