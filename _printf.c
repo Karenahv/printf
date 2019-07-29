@@ -22,7 +22,7 @@ int t_char(va_list va)
  */
 int t_string(va_list va)
 {
-	int i;
+	int i, j, len;
 	char n[] = "(null)";
 	char *s = va_arg(va, char *);
 
@@ -32,9 +32,9 @@ int t_string(va_list va)
 			_putchar(n[i]);
 		return (6);
 	}
-	for (i = 0; s[i] != '\0'; i++)
-		_putchar(s[i]);
-	return (i);
+	for (j = 0; s[j] != '\0'; j++)
+		_putchar(s[j]);
+	return (j);
 }
 /**
  * print_number - Entry point
@@ -100,19 +100,19 @@ int _printf(const char *format, ...)
 	while (format != NULL && format[i])
 	{
 		if (format[i] != '%')
-			len += _putchar(format[i]);
+			_putchar(format[i]);
 		else
 		{
 			i++;
 			if (format[i] == '%')
-				len += _putchar('%');
+				_putchar('%');
 			j = 0;
 			count = 0;
 			while (j < 6)
 			{
 				if (format[i] == difftypes[j].t)
 				{
-					len += difftypes[j].f(valist);
+					len += (difftypes[j].f(valist)) - 1;
 					count = 1;
 					break; }
 				j++; }
@@ -120,8 +120,11 @@ int _printf(const char *format, ...)
 			{
 				len++;
 				_putchar('%');
-				_putchar(format[i]); }}
-		i++; }
+				_putchar(format[i]); }
+		}
+		i++;
+		len++;
+	}
 	va_end(valist);
 	return (len);
 }
