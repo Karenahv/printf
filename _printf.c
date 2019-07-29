@@ -22,7 +22,7 @@ int t_char(va_list va)
  */
 int t_string(va_list va)
 {
-	int j, i;
+	int i;
 	char n[] = "(null)";
 	char *s = va_arg(va, char *);
 
@@ -32,10 +32,12 @@ int t_string(va_list va)
 		{
 			_putchar(n[i]);
 		}
+	} else
+	{
+		for (i = 0; s[i] != '\0'; i++)
+			_putchar(s[i]);
 	}
-	for (j = 0; s[j] != '\0'; j++)
-		_putchar(s[j]);
-	return (j);
+	return (i);
 }
 /**
  * print_number - Entry point
