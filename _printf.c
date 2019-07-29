@@ -1,5 +1,3 @@
-#include <stdarg.h>
-#include <stdio.h>
 #include "holberton.h"
 #define BUFFERSIZE 1024
 
