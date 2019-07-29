@@ -88,10 +88,9 @@ int _printf(const char *format, ...)
 	int i, j, len;
 	va_list valist;
 	types difftypes[] = {{'c', t_char}, {'s', t_string}, {'d', print_number},
-		{'i', print_number},
-		{'b', binary}};
+		{'i', print_number}, {'b', binary}};
 	i = 0;
-	if (format == NULL)
+	if (!format)
 		return (-1);
 	len = 0;
 	va_start(valist, format);
@@ -118,8 +117,7 @@ int _printf(const char *format, ...)
 				if (format[i] == difftypes[j].t)
 				{
 					len += difftypes[j].f(valist);
-					break;
-				}
+					break; }
 				j++;
 			}
 		}
