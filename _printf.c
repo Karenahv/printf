@@ -37,7 +37,7 @@ void t_string(va_list va)
 }
 /**
  * print_number - Entry point
- *@n: the integer to print
+ *@va: the integer to print
  * Return: no return
  */
 void print_number(va_list va)
@@ -105,7 +105,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			if(format[i] == '%')
+			if (format[i] == '%')
 				_putchar(format[i]);
 			j = 0;
 			while (j < 6)
