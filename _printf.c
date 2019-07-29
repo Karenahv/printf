@@ -29,14 +29,11 @@ int t_string(va_list va)
 	if (s == NULL)
 	{
 		for (i = 0; n[i] != '\0'; i++)
-		{
 			_putchar(n[i]);
-		}
-	} else
-	{
-		for (i = 0; s[i] != '\0'; i++)
-			_putchar(s[i]);
+		return (6);
 	}
+	for (i = 0; s[i] != '\0'; i++)
+		_putchar(s[i]);
 	return (i);
 }
 /**
