@@ -1,5 +1,4 @@
 #include "holberton.h"
-#define BUFFERSIZE 1024
 
 /**
  * t_char - print a character
@@ -7,12 +6,13 @@
  *
  * Return: no return
  */
-void t_char(va_list va)
+int t_char(va_list va)
 {
 	int c;
 
 	c = va_arg(va, int);
 	_putchar(c);
+	return (1);
 }
 /**
  * t_string - print a string
@@ -20,7 +20,7 @@ void t_char(va_list va)
  *
  * Return: no return
  */
-void t_string(va_list va)
+int t_string(va_list va)
 {
 	int j, i;
 	char n[] = "(null)";
@@ -34,13 +34,14 @@ void t_string(va_list va)
 	}
 	for (j = 0; s[j] != '\0'; j++)
 		_putchar(s[j]);
+	return (j);
 }
 /**
  * print_number - Entry point
  *@va: the integer to print
  * Return: no return
  */
-void print_number(va_list va)
+int print_number(va_list va)
 {
 
 	char l;
@@ -72,6 +73,7 @@ void print_number(va_list va)
 		r /= 10;
 	}
 	_putchar(l);
+	return (0);
 }
 
 /**
@@ -95,24 +97,29 @@ int _printf(const char *format, ...)
 	i = 0;
 	if (format == NULL)
 		return (-1);
-
+	len = 0;
 	va_start(valist, format);
-	len = _strlen((char *)format);
 	while (format != NULL && format[i])
 	{
 		if (format[i] != '%')
+		{
 			_putchar(format[i]);
+			len++;
+		}
 		else
 		{
 			i++;
 			if (format[i] == '%')
+			{
 				_putchar(format[i]);
+				len++;
+			}
 			j = 0;
 			while (j < 6)
 			{
 				if (format[i] == difftypes[j].t)
 				{
-					difftypes[j].f(valist);
+					len += difftypes[j].f(valist);
 					break;
 				}
 				j++;
