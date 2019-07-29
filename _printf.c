@@ -29,8 +29,9 @@ int t_string(va_list va)
 	if (s == NULL)
 	{
 		for (i = 0; n[i] != '\0'; i++)
+		{
 			_putchar(n[i]);
-		return;
+		}
 	}
 	for (j = 0; s[j] != '\0'; j++)
 		_putchar(s[j]);
@@ -86,14 +87,9 @@ int _printf(const char *format, ...)
 {
 	int i, j, len;
 	va_list valist;
-	types difftypes[] = {
-		{'c', t_char},
-		{'s', t_string},
-		{'d', print_number},
+	types difftypes[] = {{'c', t_char}, {'s', t_string}, {'d', print_number},
 		{'i', print_number},
-		{'b', binary},
-	};
-
+		{'b', binary}};
 	i = 0;
 	if (format == NULL)
 		return (-1);
