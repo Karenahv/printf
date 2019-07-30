@@ -222,6 +222,23 @@ printf("Expected   : %x\n", 0)
 _printf("Actual     : %x\n", 0)
 printf("Expected   : %u, %i, %c, %d, %s\n", INT_MIN, 324, 'g', 32, "hello")
 _printf("Expected   : %u, %i, %c, %d, %s\n", INT_MIN, 324, 'g', 32, "hello")
+.B **HEXA_BIG**
+printf("Expected   : %X\n", h)
+_printf("Actual     : %X\n", h)
+printf("Expected   : %X\n", -1)
+_printf("Actual     : %X\n", -1)
+elen = printf("Expected   : %X\n", 0)
+alen = _printf("Actual     : %X\n", 0)
+printf("Expected   : %i\n", elen)
+_printf("Actual     : %i\n", alen)
+printf("Expected   : %X\n", UINT_MAX)
+_printf("Actual     : %X\n", UINT_MAX)
+printf("Expected   : %X\n", INT_MIN)
+_printf("Actual     : %X\n", INT_MIN)
+alen = printf("Expected   : %X\n", 0)
+elen = _printf("Actual     : %X\n", 0)
+printf("Expected   : %X\n", alen)
+_printf("Actual     : %X\n", elen)
 
 
 
