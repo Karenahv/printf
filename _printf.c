@@ -22,7 +22,7 @@ int t_char(va_list va)
  */
 int t_string(va_list va)
 {
-	int i, j, len;
+	int i, j;
 	char n[] = "(null)";
 	char *s = va_arg(va, char *);
 
