@@ -11,14 +11,22 @@
 .SH DESCRIPTION.
 The function _printf is a variadic function that produces a string according to a
 I format
-and prints it to the standard output, much like the c standard library function printf. It can receive a varibale number of arguments.
+and prints it to the standard output, much like the c standard library function printf. 
+It can receive a varibale number of arguments. THe arguments that printf functions are:
+.I %d
+.I c
+.I s
+.I u
+.I x
+.I X
+.I o
+.I R
 .sp
 .B Return value
 .sp
 ON succes, _printf returns the numbers of characters printed. If
 .I format
 is NULL or if the functions encounters any arrores, it returns -1
-
 .SH OPTIONS
 .B FUNCTIONS IN PRINTF
 .IP t_char
@@ -48,21 +56,21 @@ prototype for  print hexadecimals  for caps letter
 prototype for print octal nums
 .RS
 .B SPECIAL TEST
- len = _printf("Let's try to printf a simple sentence.\n")
- len2 = printf("Let's try to printf a simple sentence.\n")
- _printf("Character:[%c]\n", 'H')
- printf("Character:[%c]\n", 'H')
- _printf("String:[%s]\n", "I am a string !")
- printf("String:[%s]\n", "I am a string !")
- _printf("String:[%s]\n", "")
- printf("String:[%s]\n", "")
- _printf("Length:[%d, %i]\n", len, len)
- printf("Length:[%d, %i]\n", len2, len2)
- _printf("Negative:[%d]\n", -762534)
- printf("Negative:[%d]\n", -762534)
- _printf("%b\n", 98)
- char c = 'z'
- int alen, elen
+len = _printf("Let's try to printf a simple sentence.\n")
+len2 = printf("Let's try to printf a simple sentence.\n")
+_printf("Character:[%c]\n", 'H')
+printf("Character:[%c]\n", 'H')
+_printf("String:[%s]\n", "I am a string !")
+printf("String:[%s]\n", "I am a string !")
+_printf("String:[%s]\n", "")
+printf("String:[%s]\n", "")
+_printf("Length:[%d, %i]\n", len, len)
+printf("Length:[%d, %i]\n", len2, len2)
+_printf("Negative:[%d]\n", -762534)
+printf("Negative:[%d]\n", -762534)
+_printf("%b\n", 98)
+char c = 'z'
+int alen, elen
 .B **CHAR** 
 printf("Expected   : %c\n", 'a')
 _printf("Actual     : %c\n", 'a')
@@ -239,7 +247,7 @@ alen = printf("Expected   : %X\n", 0)
 elen = _printf("Actual     : %X\n", 0)
 printf("Expected   : %X\n", alen)
 _printf("Actual     : %X\n", elen)
-**OCTAL**
+.B **OCTAL**
 printf("Expected   : %o\n", 2288)
 _printf("Actual     : %o\n", 2288)
 printf("Expected   : %o\n", -991)
@@ -254,9 +262,7 @@ printf("Expected   : %o\n", INT_MIN)
 _printf("Actual     : %o\n", INT_MIN)
 printf("Expected   : %o\n", 0)
 _printf("Actual     : %o\n", 0)
-
 .RE
-
 .SH NOTES
 _printf  uses a custom character printing function called _putchar, that uses the system call write().
 _putchar uses a static buffer of 1024 bytes and static incrementing variable.
