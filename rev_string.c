@@ -19,14 +19,13 @@ int print_rev(va_list va)
 	{
 		for (i = 0; n[i] != '\0'; i++)
 			_putchar(n[i]);
-		return (6);
 	}
 	while (*(s + i) != '\0')
 	{
 		i++;
 	}
 
-	while (i > 0)
+	while (i >= 0)
 	{
 		_putchar(*(s + i - 1));
 		i--;
