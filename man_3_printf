@@ -63,8 +63,7 @@ prototype for print octal nums
  _printf("%b\n", 98)
  char c = 'z'
  int alen, elen
-.B printf("**CHAR**\n")TEST 
-printf("=====================\n")
+.B **CHAR** 
 printf("Expected   : %c\n", 'a')
 _printf("Actual     : %c\n", 'a')
 elen = printf("Expected   : %c\n", c)
@@ -79,6 +78,31 @@ printf("Expected   : %c\n", '\0')
 _printf("Actual     : %c\n", '\0')
 printf("Expected   : %%%c\n", 'y')
 _printf("Actual     : %%%c\n", 'y')
+.B **STRINGS**
+char *str = "hello, world"
+alen = elen = 0
+printf("Expected   : %world\n")
+printf("Actual     : %world\n")
+printf("Expected   : %s\n", "holberton")
+_printf("Actual     : %s\n", "holberton")
+printf("Expected   : %s$\n", "")
+_printf("Actual     : %s$\n", "")
+elen = printf("Expected   : %s\n", str)
+alen = _printf("Actual     : %s\n", str)
+printf("Expected   : %i\n", elen)
+_printf("Actual     : %i\n", alen)
+printf("Expected   : %sschool\n", "holberton")
+_printf("Actual     : %sschool\n", "holberton")
+printf("Expected   : %s$\n", NULL)
+_printf("Actual     : %s$\n", NULL)
+_printf("%s%c%c%c%s%%%s%c", "Loading ", '.', '.', '.', " 99", " Please wait", '\n')
+elen =  _printf("%!\n")
+alen =  _printf("%K\n")
+printf("%d %d", elen, alen)
+elen =  printf("%!\n")
+alen =  printf("%K\n")
+printf("%d %d", elen, alen)
+alen = elen = 0
  
 
 .RE
