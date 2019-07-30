@@ -137,6 +137,30 @@ printf("Expected   : %i\n", elen)
 _printf("Actual     : %i\n", alen)
 printf("Expected   : %i\n", 0)
 _printf("Actual     : %b\n", 0)
+.B **DECIMAL**
+alen = elen = 0;
+p = 1134001;
+n = -4567;
+z = 0;
+elen = printf("Expected   : %d\n", p)
+alen = _printf("Actual     : %d\n", p)
+printf("Expected   : %d\n", elen)
+_printf("Actual     : %d\n", alen)
+elen = printf("Expected   : %d\n", n)
+alen = _printf("Actual     : %d\n", n)
+printf("Expected   : %d\n", elen)
+_printf("Actual     : %d\n", alen)
+elen = printf("Expected   : %i\n", z)
+alen = _printf("Actual     : %i\n", z)
+printf("Expected   : %i\n", elen)
+_printf("Actual     : %i\n", alen)
+printf("Expected   : %d\n", INT_MAX)
+_printf("Actual     : %d\n", INT_MAX)
+printf("Expected   : %d\n", INT_MIN)
+_printf("Actual     : %d\n", INT_MIN)
+
+
+
 
 .RE
 
