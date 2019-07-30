@@ -48,22 +48,38 @@ prototype for  print hexadecimals  for caps letter
 prototype for print octal nums
 .RS
 .B SPECIAL TEST
- len = _printf("Let's try to printf a simple sentence.\n");
- len2 = printf("Let's try to printf a simple sentence.\n");
- _printf("Character:[%c]\n", 'H');
- printf("Character:[%c]\n", 'H');
- _printf("String:[%s]\n", "I am a string !");
- printf("String:[%s]\n", "I am a string !");
- _printf("String:[%s]\n", "");
- printf("String:[%s]\n", "");
- _printf("Length:[%d, %i]\n", len, len);
- printf("Length:[%d, %i]\n", len2, len2);
- _printf("Negative:[%d]\n", -762534);
- printf("Negative:[%d]\n", -762534);
- _printf("%b\n", 98);
- char c = 'z';
- int alen, elen;
-
+ len = _printf("Let's try to printf a simple sentence.\n")
+ len2 = printf("Let's try to printf a simple sentence.\n")
+ _printf("Character:[%c]\n", 'H')
+ printf("Character:[%c]\n", 'H')
+ _printf("String:[%s]\n", "I am a string !")
+ printf("String:[%s]\n", "I am a string !")
+ _printf("String:[%s]\n", "")
+ printf("String:[%s]\n", "")
+ _printf("Length:[%d, %i]\n", len, len)
+ printf("Length:[%d, %i]\n", len2, len2)
+ _printf("Negative:[%d]\n", -762534)
+ printf("Negative:[%d]\n", -762534)
+ _printf("%b\n", 98)
+ char c = 'z'
+ int alen, elen
+.B printf("**CHAR**\n")TEST 
+printf("=====================\n")
+printf("Expected   : %c\n", 'a')
+_printf("Actual     : %c\n", 'a')
+elen = printf("Expected   : %c\n", c)
+alen = _printf("Actual     : %c\n", c)
+printf("Expected   : %i\n", elen)
+_printf("Actual     : %i\n", alen)
+printf("Expected   : %cc\n", 'a')
+_printf("Actual     : %cc\n", 'a')
+printf("Expected   : %c\n", 53)
+_printf("Actual     : %c\n", 53)
+printf("Expected   : %c\n", '\0')
+_printf("Actual     : %c\n", '\0')
+printf("Expected   : %%%c\n", 'y')
+_printf("Actual     : %%%c\n", 'y')
+ 
 
 .RE
 
