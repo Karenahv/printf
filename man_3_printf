@@ -158,7 +158,45 @@ printf("Expected   : %d\n", INT_MAX)
 _printf("Actual     : %d\n", INT_MAX)
 printf("Expected   : %d\n", INT_MIN)
 _printf("Actual     : %d\n", INT_MIN)
-
+.B **UNSIGNED**
+unsigned int uelen = 0
+unsigned int ualen = 0
+unsigned int m = 113342421
+z = 0
+elen = printf("Expected   : %u\n", m)
+alen = _printf("Actual     : %u\n", m)
+printf("Expected   : %u\n", elen);
+alen = _printf("Actual     : %i\n", z)
+printf("Expected   : %i\n", elen)
+_printf("Actual     : %i\n", alen)
+printf("Expected   : %d\n", INT_MAX)
+_printf("Actual     : %d\n", INT_MAX)
+printf("Expected   : %d\n", INT_MIN)
+_printf("Actual     : %d\n", INT_MIN)
+unsigned int uelen = 0
+unsigned int ualen = 0
+unsigned int m = 113342421
+z = 0
+elen = printf("Expected   : %u\n", m)
+alen = _printf("Actual     : %u\n", m)
+printf("Expected   : %u\n", elen)
+_printf("Actual     : %u\n", alen)
+uelen = printf("Expected   : %u\n", z)
+ualen = _printf("Actual     : %u\n", z)
+printf("Expected   : %u\n", uelen)
+_printf("Actual     : %u\n", ualen)
+printf("Expected   : %u\n", z)
+_printf("Actual     : %u\n", z)
+printf("Expected   : %u\n", -5)
+_printf("Actual     : %u\n", -5)
+printf("Expected   : %u\n", UINT_MAX)
+_printf("Actual     : %u\n", UINT_MAX)
+printf("Expected   : %u\n", INT_MAX)
+_printf("Actual     : %u\n", INT_MAX)
+printf("Expected   : %u\n", 1)
+_printf("Actual     : %u\n", 1)
+printf("Expected   : %u\n", INT_MIN)
+_printf("Actual     : %u\n", INT_MIN)
 
 
 
