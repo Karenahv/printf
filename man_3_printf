@@ -18,3 +18,8 @@ and prints it to the standard output, much like the c standard library function 
 ON succes, _printf returns the numbers of characters printed. If
 .I format
 is NULL or if the functions encounters any arrores, it returns -1
+
+.SH NOTES
+_printf  uses a custom character printing function called _putchar, that uses the system call write().
+_putchar uses a static buffer of 1024 bytes and static incrementing variable.
+That way, everytime _putchar is called inside _printf,  the caracter is stored inside the buffer and the function moves t the nex character, until _printf calls _putchar(-1).
