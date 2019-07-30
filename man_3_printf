@@ -20,7 +20,7 @@ ON succes, _printf returns the numbers of characters printed. If
 is NULL or if the functions encounters any arrores, it returns -1
 
 .SH OPTIONS
-.B FUNCTIONS
+.B FUNCTIONS IN PRINTF
 .IP t_char
 print a character
 .IP t_string
@@ -29,6 +29,23 @@ print a string
 entry point
 .IP _printf(const char *format, ...)
 print output according to speciefied format
+.B FUNCTIONS IN HOLBERTON.H
+.IP int _putchar(char c)
+prototype for putchar
+.IP Int strlen(char *s)
+prototype for lenght string
+.IP print_number(va_list va)
+prototype for print numbers
+.IP int binary(va_list va)
+prototype for converti integer  to binary
+.IP int print_unsigned(va_list va)
+prototype for print unsigned int
+.IP Int hexa(va_list va)
+prototype for hexadecimals
+.IP hexa_upper(va_list va)
+prototype for  print hexadecimals  for caps letter
+.IP int octal(va_list va)
+prototype for print octal nums
 
 
 .SH NOTES
