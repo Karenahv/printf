@@ -43,40 +43,44 @@ int t_string(va_list va)
  */
 int print_number(va_list va)
 {
-
-	char l;
-	int r, len;
-	char d;
+	int i, len, r, l;
+	unsigned int abs, num, numt;
 	int n = va_arg(va, int);
 
 	len = 0;
+	i = 0;
+	r = 1;
+	l = 1;
 	if (n < 0)
 	{
 		_putchar('-');
-		l = ('0' - (n % 10));
-		n /= -10;
 		len++;
+		abs = -n;
 	} else
 	{
-		l = ((n % 10) + '0');
-		n /= 10;
-	}
-	r = 0;
-	while (n > 0)
-	{
-		r = r * 10 + (n % 10);
-		n /= 10;
-		len++;
+		abs = n;
 	}
 
-	while (r > 0)
+	num = abs;
+	while (num > 0)
 	{
-		d = ((r % 10) + '0');
-		_putchar (d);
-		r /= 10;
+		num /= 10;
+		i++;
 	}
-	_putchar(l);
-	return (len + 1);
+
+	while (r < i)
+	{
+		l *= 10;
+		r++;
+	}
+	while (l >= 1)
+	{
+		numt = (abs / l) % 10;
+		_putchar(numt + '0');
+		len++;
+		l /= 10;
+	}
+	return (len);
 }
 
 /**
