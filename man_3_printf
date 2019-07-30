@@ -8,9 +8,13 @@
 .BI "include "our file"
 .sp
 .ad
-.SH DESCRIPTION
-This function writes output to
-.I stdout
-according to a
+.SH DESCRIPTION.
+The function _printf is a variadic function that produces a string according to a
+I format
+and prints it to the standard output, much like the c standard library function printf. It can receive a varibale number of arguments.
+.sp
+.B Return value
+.sp
+ON succes, _printf returns the numbers of characters printed. If
 .I format
-as described below.
+is NULL or if the functions encounters any arrores, it returns -1
