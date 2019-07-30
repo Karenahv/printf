@@ -10,7 +10,7 @@ with a structure called from the holberton.h
 - All codes will be compiled this way: gcc -Wall -Werror -Wextra -pedantic *.c
 
 
- File | Descripción		     
-__|__
-a|b
-a|b
+file   |   description
+--|--
+holberton.h | description
+_putchar.c | description
