@@ -1,21 +1,6 @@
-.TH man 3 "29 Julio 2018" "_printf man page"
-. SH NAME
-printf - prints the character(s)
+.TH Man 3 " 30 July 2019" "HOLBERTON SCHOOL" "_PRINTF"
+.SH NAME
+.B _printf
+- formatted output conversion
 .SH SYNOPSIS
-#include "holberton.h"
-int _printf(const char *format, ...);
-.SH DESCRIPTION
-The printf function creates an output of a character string  in
-accordance to a specific format. If the function is succesfull it
-will return  the number of character printed. The format is a
-string of characters printed.  The format is a string of characters
-thaht the function prints.The function goes through each character
-in the sting and prints.When a % sign is reached and the following
-character is a special character then a specific conversion will occur.
-The special characters and their conversions are as follows:
-
-
-b  prints a binary number
-
-.SH AUTHOR
-Karen Herrera and Carlos Alvarez
+.B #include "our file"
