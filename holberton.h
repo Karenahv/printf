@@ -26,6 +26,10 @@ int print_unsigned(va_list va);
 int hexa(va_list va);
 int hexa_upper(va_list va);
 int octal(va_list va);
+int print_rot(va_list va);
+char *malloc_str(char *str);
+char *rot13(char *p);
+int print_rev(va_list va);
 int _printf(const char *format, ...);
 
 #endif
