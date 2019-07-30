@@ -4,3 +4,13 @@
 - formatted output conversion
 .SH SYNOPSIS
 .B #include "our file"
+.sp
+.BI "include "our file"
+.sp
+.ad
+.SH DESCRIPTION
+This function writes output to
+.I stdout
+according to a
+.I format
+as described below.
