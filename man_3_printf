@@ -1,21 +1,95 @@
-.TH man 3 "29 Julio 2018" "_printf man page"
-. SH NAME
-printf - prints the character(s)
+.TH Man 3 " 30 July 2019" "HOLBERTON SCHOOL" "_PRINTF"
+.SH NAME
+.B _printf
+- formatted output conversion
 .SH SYNOPSIS
-#include "holberton.h"
-int _printf(const char *format, ...);
-.SH DESCRIPTION
-The printf function creates an output of a character string  in
-accordance to a specific format. If the function is succesfull it
-will return  the number of character printed. The format is a
-string of characters printed.  The format is a string of characters
-thaht the function prints.The function goes through each character
-in the sting and prints.When a % sign is reached and the following
-character is a special character then a specific conversion will occur.
-The special characters and their conversions are as follows:
+.B #include "our file"
+.sp
+.BI "include "our file"
+.sp
+.ad
+.SH DESCRIPTION.
+The function _printf is a variadic function that produces a string according to a
+I format
+and prints it to the standard output, much like the c standard library function printf. It can receive a varibale number of arguments.
+.sp
+.B Return value
+.sp
+ON succes, _printf returns the numbers of characters printed. If
+.I format
+is NULL or if the functions encounters any arrores, it returns -1
 
+.SH OPTIONS
+.B FUNCTIONS IN PRINTF
+.IP t_char
+print a character
+.IP t_string
+print a string
+.IP print_number
+entry point
+.IP _printf(const char *format, ...)
+print output according to speciefied format
+.B FUNCTIONS IN HOLBERTON.H
+.IP int _putchar(char c)
+prototype for putchar
+.IP Int strlen(char *s)
+prototype for lenght string
+.IP print_number(va_list va)
+prototype for print numbers
+.IP int binary(va_list va)
+prototype for converti integer  to binary
+.IP int print_unsigned(va_list va)
+prototype for print unsigned int
+.IP Int hexa(va_list va)
+prototype for hexadecimals
+.IP hexa_upper(va_list va)
+prototype for  print hexadecimals  for caps letter
+.IP int octal(va_list va)
+prototype for print octal nums
+.RS
+.B SPECIAL TEST
+ len = _printf("Let's try to printf a simple sentence.\n")
+ len2 = printf("Let's try to printf a simple sentence.\n")
+ _printf("Character:[%c]\n", 'H')
+ printf("Character:[%c]\n", 'H')
+ _printf("String:[%s]\n", "I am a string !")
+ printf("String:[%s]\n", "I am a string !")
+ _printf("String:[%s]\n", "")
+ printf("String:[%s]\n", "")
+ _printf("Length:[%d, %i]\n", len, len)
+ printf("Length:[%d, %i]\n", len2, len2)
+ _printf("Negative:[%d]\n", -762534)
+ printf("Negative:[%d]\n", -762534)
+ _printf("%b\n", 98)
+ char c = 'z'
+ int alen, elen
+.B printf("**CHAR**\n")TEST 
+printf("=====================\n")
+printf("Expected   : %c\n", 'a')
+_printf("Actual     : %c\n", 'a')
+elen = printf("Expected   : %c\n", c)
+alen = _printf("Actual     : %c\n", c)
+printf("Expected   : %i\n", elen)
+_printf("Actual     : %i\n", alen)
+printf("Expected   : %cc\n", 'a')
+_printf("Actual     : %cc\n", 'a')
+printf("Expected   : %c\n", 53)
+_printf("Actual     : %c\n", 53)
+printf("Expected   : %c\n", '\0')
+_printf("Actual     : %c\n", '\0')
+printf("Expected   : %%%c\n", 'y')
+_printf("Actual     : %%%c\n", 'y')
+ 
 
-b  prints a binary number
+.RE
 
-.SH AUTHOR
-Karen Herrera and Carlos Alvarez
+.SH NOTES
+_printf  uses a custom character printing function called _putchar, that uses the system call write().
+_putchar uses a static buffer of 1024 bytes and static incrementing variable.
+That way, everytime _putchar is called inside _printf,  the caracter is stored inside the buffer and the function moves t the nex character, until _printf calls _putchar(-1).
+.SH BUGS
+Some specials cases can't working 
+.SH AUTHORS
+.pp
+Karen Herrera  and Carlos Alvarez, Cohort 9
+.pp
