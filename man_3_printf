@@ -239,8 +239,21 @@ alen = printf("Expected   : %X\n", 0)
 elen = _printf("Actual     : %X\n", 0)
 printf("Expected   : %X\n", alen)
 _printf("Actual     : %X\n", elen)
-
-
+**OCTAL**
+printf("Expected   : %o\n", 2288)
+_printf("Actual     : %o\n", 2288)
+printf("Expected   : %o\n", -991)
+_printf("Actual     : %o\n", -991)
+elen = printf("Expected   : %o\n", h)
+alen = _printf("Actual     : %o\n", h)
+printf("Expected   : %o\n", elen)
+_printf("Actual     : %o\n", alen)
+printf("Expected   : %o\n", INT_MAX)
+_printf("Actual     : %o\n", INT_MAX)
+printf("Expected   : %o\n", INT_MIN)
+_printf("Actual     : %o\n", INT_MIN)
+printf("Expected   : %o\n", 0)
+_printf("Actual     : %o\n", 0)
 
 .RE
 
