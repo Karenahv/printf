@@ -103,7 +103,20 @@ elen =  printf("%!\n")
 alen =  printf("%K\n")
 printf("%d %d", elen, alen)
 alen = elen = 0
- 
+.B **PERCENT**
+ elen = printf("Expected   : %%\n")
+ alen = _printf("Actual     : %%\n")
+ printf("Expected   : %i\n", alen)
+ _printf("Actual     : %i\n", elen)
+ elen = printf("Expected   : %%%%\n")
+ alen = _printf("Actual     : %%%%\n")
+ printf("Expected   : %i\n", elen)
+ _printf("Actual     : %i\n", alen)
+ printf("Expected   :")
+ printf("%")
+ _printf("\n")
+ printf("Actual     :")
+ _printf("%")
 
 .RE
 
