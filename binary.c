@@ -16,6 +16,8 @@ int binary(va_list va)
 
 	c = va_arg(va, int);
 	i = 0;
+	if (c == 0)
+		_putchar('0');
 	while (c > 0)
 	{
 		arr[i] = c % 2;
@@ -24,5 +26,5 @@ int binary(va_list va)
 	}
 	for (j = i - 1; j >= 0; j--)
 		_putchar(arr[j] + '0');
-	return (0);
+	return (i);
 }
