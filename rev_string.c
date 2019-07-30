@@ -2,7 +2,7 @@
 
 /**
  * print_rev - Entry point
- * @s: pointer the string we want to reverse and print
+ * @va: pointer the string we want to reverse and print
  *
  * Return: no return
  */
@@ -32,6 +32,5 @@ int print_rev(va_list va)
 		i--;
 
 	}
-	_putchar('\n');
 	return (i);
 }
