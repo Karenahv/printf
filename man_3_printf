@@ -127,7 +127,16 @@ printf("Expected   : %i\n", elen)
 _printf("Actual     : %i\n", alen)
 printf("Expected   : %i\n", 0)
 _printf("Actual     : %b\n", 0)
-
+.B **BINARY**
+int b = 4312
+printf("Expected   : %i\n", 1111011)
+_printf("Actual     : %b\n", 123)
+elen = printf("Expected   : %lu\n", 1000011011000)
+alen = _printf("Actual     : %b\n", b)
+printf("Expected   : %i\n", elen)
+_printf("Actual     : %i\n", alen)
+printf("Expected   : %i\n", 0)
+_printf("Actual     : %b\n", 0)
 
 .RE
 
