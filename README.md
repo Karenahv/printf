@@ -1,6 +1,6 @@
 ## 0x11. C - printf
 
-This project is for  replicate the C standard library printf() function
+This project is for replicate the C standard library printf() function
 
 What you should learn from this project:
 
@@ -11,7 +11,7 @@ What you should learn from this project:
 
 
 Printf function with  the printing features of characters (c), strings (s), % (%), octales (0), hexadecimals ( x and X). We also did a 
-bunary function (b)
+binary function (b)
 
 We create a mini function printf like that of the C language, we document with the book the secrets of printf.
 We use the putchar function of the syscall writer function. and we work with data structures,
@@ -32,6 +32,7 @@ man_3_printf | A file man type for printf function
 octales.c | A file for print octals numbers
 rot13.c | A file for print encripted numbers in rot13
 unsig_num.c | A file for print unsigned numbers
+rev_string.c | A file for print string in reverse
 
 ## Prototype
 ``` int _printf(const char *format, ...);```
@@ -49,11 +50,11 @@ All files were linted for syntax and style with [Betty][https://github.com/holbe
 
 
 Special thanks to  peers cohort 9:
-@JuanSGalvisH
-@luischaparroc
-@alzheimeer
-@edward0rtiz
-@Dr2d4
+* @JuanSGalvisH
+* @luischaparroc
+* @alzheimeer
+* @edward0rtiz
+* @Dr2d4
 
 
 
