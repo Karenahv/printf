@@ -1,9 +1,10 @@
- # _PRINTF
+## 0x11. C - printf
 
-## PROJECT DETAILS
 
-Create a small versión of printf function.
+- All codes will be compiled this way: gcc -Wall -Werror -Wextra -pedantic *.c
 
-Function prototype
-
-int _printf(const char *format, ...);
+| File		   | Descripción		     |
+|__________________|_________________________________|
+| 0		   | A xxxxx					|
+|
+|
