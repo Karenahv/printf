@@ -46,7 +46,26 @@ prototype for hexadecimals
 prototype for  print hexadecimals  for caps letter
 .IP int octal(va_list va)
 prototype for print octal nums
+.RS
+.B SPECIAL TEST
+ len = _printf("Let's try to printf a simple sentence.\n");
+ len2 = printf("Let's try to printf a simple sentence.\n");
+ _printf("Character:[%c]\n", 'H');
+ printf("Character:[%c]\n", 'H');
+ _printf("String:[%s]\n", "I am a string !");
+ printf("String:[%s]\n", "I am a string !");
+ _printf("String:[%s]\n", "");
+ printf("String:[%s]\n", "");
+ _printf("Length:[%d, %i]\n", len, len);
+ printf("Length:[%d, %i]\n", len2, len2);
+ _printf("Negative:[%d]\n", -762534);
+ printf("Negative:[%d]\n", -762534);
+ _printf("%b\n", 98);
+ char c = 'z';
+ int alen, elen;
 
+
+.RE
 
 .SH NOTES
 _printf  uses a custom character printing function called _putchar, that uses the system call write().
