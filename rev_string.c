@@ -8,7 +8,7 @@
  */
 int print_rev(va_list va)
 {
-	int i;
+	int i, j;
 	char *s;
 	char n[] = "(null)";
 
@@ -19,17 +19,12 @@ int print_rev(va_list va)
 	{
 		for (i = 0; n[i] != '\0'; i++)
 			_putchar(n[i]);
+		return (6);
 	}
-	while (*(s + i) != '\0')
-	{
-		i++;
-	}
-
-	while (i >= 0)
-	{
-		_putchar(*(s + i - 1));
-		i--;
-
-	}
-	return (i);
+	j = 0;
+	while (s[j] != '\0')
+		j++;
+	for (i = j - 1; i >= 0; i--)
+		_putchar (s[i]);
+	return (j);
 }
