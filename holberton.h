@@ -30,6 +30,8 @@ int print_rot(va_list va);
 char *malloc_str(char *str);
 char *rot13(char *p);
 int print_rev(va_list va);
+int hexa_special(unsigned int c);
+int stringhexa(va_list va);
 int _printf(const char *format, ...);
 
 #endif

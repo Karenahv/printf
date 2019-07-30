@@ -96,7 +96,7 @@ int _printf(const char *format, ...)
 	types difftypes[] = {{'c', t_char}, {'s', t_string}, {'d', print_number},
 			     {'i', print_number}, {'b', binary}, {'u', print_unsigned},
 			     {'x', hexa}, {'X', hexa_upper}, {'o', octal}, {'R', print_rot},
-			     {'r', print_rev}};
+			     {'r', print_rev}, {'S', stringhexa}};
 
 	if (format == NULL || (format[0] == '%' && format[1] == 0))
 		return (-1);
@@ -112,7 +112,7 @@ int _printf(const char *format, ...)
 				len += _putchar('%');
 			j = 0;
 			count = 0;
-			while (j < 11)
+			while (j < 12)
 			{
 				if (format[i] == difftypes[j].t)
 				{
