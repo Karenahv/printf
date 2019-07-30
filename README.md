@@ -36,6 +36,13 @@ unsig_num.c | A file for print unsigned numbers
 ## Prototype
 ``` int _printf(const char *format, ...);```
 
+## Usage
+* Prints a string to the standard output, according to a given format
+* ALl files were created and compiled on Ubuntu 14.04.4 LTS USING  GCC 4.8.4 with the command ```gcc -Wall -Werror -Wextra -Pedantic *.c```
+All files were linted for syntax and style with [Betty][https://github.com/holbertonschool/Betty)
+* Returns the number of characteres in the output string on succes, -1 otherwise
+* Call it this way: ```_printf("format string", arguments...)```where format string``` can contain conversion specifiers and flags, alog with regular characteres
+
 
 
 
