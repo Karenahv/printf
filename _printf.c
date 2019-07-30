@@ -94,7 +94,8 @@ int _printf(const char *format, ...)
 	int i, j, len, count;
 	va_list valist;
 	types difftypes[] = {{'c', t_char}, {'s', t_string}, {'d', print_number},
-			     {'i', print_number}, {'b', binary}};
+			     {'i', print_number}, {'b', binary}, {'u', print_unsigned},
+			     {'x', hexa}, {'X', hexa_upper}, {'o', octal}};
 
 	i = 0;
 	len = 0;
@@ -112,7 +113,7 @@ int _printf(const char *format, ...)
 				len += _putchar('%');
 			j = 0;
 			count = 0;
-			while (j < 6)
+			while (j < 9)
 			{
 				if (format[i] == difftypes[j].t)
 				{

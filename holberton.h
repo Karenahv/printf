@@ -22,6 +22,10 @@ int _putchar(char c);
 int _strlen(char *s);
 int print_number(va_list va);
 int binary(va_list va);
+int print_unsigned(va_list va);
+int hexa(va_list va);
+int hexa_upper(va_list va);
+int octal(va_list va);
 int _printf(const char *format, ...);
 
 #endif
