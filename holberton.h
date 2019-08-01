@@ -32,6 +32,8 @@ char *rot13(char *p);
 int print_rev(va_list va);
 int hexa_special(unsigned int c);
 int stringhexa(va_list va);
+int pointer(va_list va);
+int hexa_pointer(unsigned long int c);
 int _printf(const char *format, ...);
 
 #endif
